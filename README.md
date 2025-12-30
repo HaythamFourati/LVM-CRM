@@ -17,34 +17,36 @@ A modern, high-performance WordPress theme for LVM CRM — a SaaS CRM reseller o
 
 ```
 CRM-LVM/
-├── build/                    # Compiled assets (git-ignored)
+├── build/                    # Compiled assets
 │   ├── index.js              # Bundled React/GSAP
-│   └── index.css             # Compiled Tailwind
+│   ├── index.css             # Compiled Tailwind
+│   └── index.asset.php       # WP asset dependencies
 ├── src/
 │   ├── index.js              # React entry point
 │   ├── index.css             # Tailwind entry (tokens + layers)
 │   └── components/
-│       └── Enhancer.jsx      # All React enhancements
+│       └── Enhancer.jsx      # All React/GSAP enhancements
 ├── template-parts/           # Reusable PHP partials
-│   ├── header-nav.php        # Site navigation
-│   ├── section-hero.php      # Homepage hero
-│   ├── section-features.php  # CRM features grid
-│   ├── section-pricing.php   # Pricing tiers
-│   ├── section-testimonials.php
-│   ├── section-contact.php
-│   └── footer-site.php
+│   ├── header-nav.php        # Site navigation (desktop + mobile)
+│   ├── section-hero.php      # Homepage hero with carousel
+│   ├── section-problem.php   # Problem/solution with animated lines
+│   ├── section-features.php  # 12 feature cards grid
+│   ├── section-website.php   # Free website offer
+│   ├── section-how-it-works.php  # 3-step process
+│   ├── section-pricing.php   # Comparison table ($97 vs $1,612)
+│   ├── section-testimonials.php  # Infinite scroll marquee
+│   ├── section-faq.php       # Accordion FAQ
+│   ├── section-cta.php       # Final call-to-action
+│   └── footer-site.php       # Site footer
 ├── front-page.php            # Homepage template
-├── page-about.php            # About LVM CRM
-├── page-blog.php             # Blog listing (Template Name: Blog)
-├── page-crm.php              # CRM service page
-├── page-websites.php         # Website creation service page
-├── page-pricing.php          # Pricing page
-├── page-demo.php             # Demo request page
 ├── single.php                # Single blog post
 ├── archive.php               # Category/tag archives
-├── index.php                 # Fallback template
+├── index.php                 # Blog listing page
+├── header.php                # WP header (meta, scripts)
+├── footer.php                # WP footer (closing tags)
 ├── functions.php             # Theme setup & enqueues
 ├── style.css                 # Theme metadata (required by WP)
+├── PRD.txt                   # Product requirements document
 └── package.json              # NPM scripts & dependencies
 ```
 
@@ -144,53 +146,55 @@ This runs three processes in parallel:
 
 ### Homepage (`front-page.php`)
 Automatically used for the site's front page. Includes:
-- Hero with split text animation
-- CRM features grid
-- Pricing section
-- Testimonials carousel
-- Contact/Demo form
-- Footer
+- Hero with Maryland-focused copy and niche carousel
+- Problem/solution section with animated connecting lines
+- 12 feature cards grid
+- Free website offer section
+- How it works (3 steps)
+- Pricing comparison table ($97/mo vs $1,612)
+- Testimonials marquee (10 reviews)
+- FAQ accordion
+- Final CTA
 
-### Service Pages (`page-{service}.php`)
-Create a WordPress page with matching slug:
-- `/crm` — Go High Level CRM reseller features
-- `/websites` — Website creation services
-- `/pricing` — Pricing tiers and plans
-- `/demo` — Demo request / booking
+### Blog (`index.php`)
+Main blog listing page at `/blog`. Features:
+- Hero section with branding
+- 3-column post grid with cards
+- Pagination support
 
-### About Page (`page-about.php`)
-Create a page with slug `/about` or select "About" template.
+### Single Post (`single.php`)
+Individual blog post template with:
+- Back to blog link
+- Category, author, date, reading time
+- Featured image
+- Prose-styled content
+- Tags, author box
+- Previous/next navigation
 
-### Blog (`page-blog.php`)
-Create a page with slug `/blog` or select "Blog" template.
+### Archive (`archive.php`)
+Category and tag archive pages with same styling as blog.
 
 ## Animations
 
 ### On-Load (runs once)
 - Header slides in from top
-- Hero text character-by-character reveal (desktop)
-- Hero image/dashboard mockup reveal
+- Hero text fade-in with underline animation
+- Niche carousel 3D rotation
 - CTA button pop-in
 
 ### On-Scroll (desktop only)
 - Section headers fade up
 - Feature cards batch animate with stagger
-- Pricing cards reveal
-- Testimonials fade-in
+- Problem cards reveal with connecting lines to solution
+- Pricing table reveal
+- Testimonials marquee (continuous)
 
-## Adding New Pages
+## Adding New Sections
 
-1. Create PHP template: `page-{slug}.php`
-2. Add Template Name comment if needed:
-   ```php
-   <?php
-   /**
-    * Template Name: My Custom Page
-    */
-   ```
-3. Include header-nav and footer-site partials
-4. Add `#react-enhancer` div before `get_footer()`
-5. Add any new animation selectors to `Enhancer.jsx`
+1. Create template part: `template-parts/section-{name}.php`
+2. Add to `front-page.php` with `get_template_part()`
+3. Add animation selectors to `src/components/Enhancer.jsx`
+4. Run `npm run build` to compile
 
 ## Contact Information
 

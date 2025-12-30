@@ -1,0 +1,57 @@
+<div class="cf7-custom-form">
+  <div class="cf7-row cf7-two-col">
+    <div class="cf7-field">
+      <label class="cf7-label">Full Name</label>
+      [text* your-name class:cf7-input placeholder "John Smith"]
+    </div>
+    <div class="cf7-field">
+      <label class="cf7-label">Phone Number</label>
+      [tel* your-phone class:cf7-input placeholder "(555) 123-4567"]
+    </div>
+  </div>
+
+  <div class="cf7-field">
+    <label class="cf7-label">Email Address</label>
+    [email* your-email class:cf7-input placeholder "john@example.com"]
+  </div>
+
+  <div class="cf7-field">
+    <label class="cf7-label">Service Needed</label>
+    [select your-service class:cf7-select include_blank "Elder Law" "Estate Planning" "Medicaid Planning" "Long-Term Care Planning" "Asset Protection" "Probate & Administration" "Other"]
+  </div>
+
+  <div class="cf7-field">
+    <label class="cf7-label">How Can We Help?</label>
+    [textarea* your-message class:cf7-textarea x4 placeholder "Briefly describe your situation..."]
+  </div>
+
+  <div class="cf7-submit-wrap">
+    [submit class:cf7-submit "Request Free Consultation"]
+  </div>
+
+  <p class="cf7-disclaimer">By submitting, you agree to our privacy policy. We'll never share your information.</p>
+</div>
+
+
+----------------------------------------------------------
+
+
+From: Elder Attorney Website <wordpress@elderattorneylongisland.com>
+Subject: New Consultation Request from [your-name]
+Additional Headers: Reply-To: [your-email]
+
+Message Body:
+
+
+New consultation request from your website:
+
+Name: [your-name]
+Email: [your-email]
+Phone: [your-phone]
+Service Needed: [your-service]
+
+Message:
+[your-message]
+
+---
+This message was sent from the Elder Attorney Long Island website contact form.

@@ -1,0 +1,359 @@
+Product Requirements Document (PRD)
+Project: $97/mo All-In-One Business Platform – Presentation Website
+1. Product Overview
+1.1 Product Name (Working Title)
+
+[Your Brand Name] – All-In-One Business Growth Platform
+
+(Brand-neutral internally; marketing name can change.)
+
+1.2 Problem Statement
+
+Small businesses struggle with:
+
+Too many disconnected tools (CRM, email, booking, website, forms)
+
+High monthly software costs ($300–$800/month)
+
+Technical complexity
+
+No clear setup or onboarding
+
+They want one simple system, done for them, at a price they can afford.
+
+1.3 Solution
+
+A white-labeled, all-in-one platform that includes:
+
+CRM
+
+Automation
+
+Website
+
+Lead capture
+
+Booking
+
+Messaging
+
+All for $97/month, fully set up, under your brand, with no tech headache.
+
+2. Goals & Success Metrics
+2.1 Primary Goals
+
+Convert visitors into trial signups or booked demos
+
+Clearly communicate value vs price
+
+Position offer as “too good to ignore”
+
+Build trust despite low pricing
+
+2.2 Success Metrics (KPIs)
+
+Conversion rate ≥ 3–5%
+
+Bounce rate < 50%
+
+CTA clicks (Sign Up / Book Demo)
+
+Demo bookings per 100 visitors
+
+Time on page ≥ 1:30
+
+3. Target Audience
+3.1 Primary Users
+
+Local service businesses (lawyers, dentists, coaches, contractors)
+
+Solo founders
+
+Small agencies
+
+Consultants
+
+3.2 User Pain Points
+
+“I don’t have time to manage tech”
+
+“Everything is too expensive”
+
+“I just want leads and bookings”
+
+“I don’t want 10 subscriptions”
+
+4. Value Proposition
+Core Message
+
+Everything your business needs to grow — for less than $4/day.
+
+Supporting Value
+
+Replace 5–10 tools
+
+One login
+
+One bill
+
+Done-for-you setup
+
+Your brand, not a generic SaaS
+
+5. Website Scope & Pages
+5.1 Pages Included (MVP)
+
+Landing Page (Primary)
+
+Features Page
+
+Pricing Page
+
+How It Works
+
+FAQs
+
+Contact / Book Demo
+
+Legal (Privacy / Terms)
+
+6. Landing Page Requirements (CORE)
+6.1 Hero Section
+
+Goal: Instantly communicate offer + price + clarity
+
+Must include:
+
+Headline (clear, benefit-driven)
+
+Subheadline (who it’s for)
+
+Price: $97/month
+
+Primary CTA: “Get Started” or “Book a Demo”
+
+Trust badge or “No contracts / Cancel anytime”
+
+6.2 Problem → Solution Section
+
+Goal: Emotional alignment
+
+Content:
+
+List common frustrations
+
+Contrast with “One platform instead of 7 tools”
+
+Simple visual (icons or checklist)
+
+6.3 What’s Included Section
+
+Goal: Overdeliver perception
+
+Feature groups:
+
+CRM & Lead Management
+
+Website & Funnels
+
+Automation & Follow-Ups
+
+Booking & Calendars
+
+Messaging (SMS, Email)
+
+Reporting
+
+⚠️ Do NOT mention GoHighLevel by name publicly
+
+6.4 Done-For-You Website Section
+
+Goal: Differentiate from competitors
+
+Explain:
+
+Website included
+
+Built for conversions
+
+Mobile-optimized
+
+Connected to CRM & automation
+
+Fast setup
+
+6.5 How It Works (3 Steps)
+
+Sign up
+
+We set everything up
+
+You start getting leads
+
+6.6 Pricing Section
+
+Goal: Kill objections
+
+Include:
+
+$97/month
+
+Everything included
+
+No setup fees (or clearly stated if any)
+
+Cancel anytime
+
+Comparison vs “Typical Software Stack” ($500+/mo)
+
+6.7 Social Proof (Even Early Stage)
+
+Options:
+
+“Built on enterprise-grade infrastructure”
+
+“Used by thousands of businesses worldwide”
+
+Testimonials (can be generic/brand-level initially)
+
+6.8 FAQ Section
+
+Must cover:
+
+Is there a contract?
+
+What happens if I cancel?
+
+Is this a CRM?
+
+Do I need technical skills?
+
+How long setup takes?
+
+Can I use my own domain?
+
+6.9 Final CTA
+
+Strong, repeated CTA:
+
+“Start for $97/month”
+
+Or “Book a Free Demo”
+
+7. Features Page Requirements
+Goal
+
+Deep dive for logical buyers.
+
+Sections:
+
+CRM & Pipelines
+
+Automation & Workflows
+
+Messaging
+
+Website & Funnels
+
+Calendars
+
+Reporting
+
+White-label branding (softly mentioned)
+
+8. Pricing Page Requirements
+Goal
+
+Maximum transparency
+
+Include:
+
+Single plan (recommended)
+
+Optional add-ons (future)
+
+Clear “What’s Included”
+
+No hidden fees
+
+9. UX / UI Requirements
+Design Style
+
+Clean
+
+Modern SaaS
+
+Trust-focused
+
+Minimal animations
+
+Fast loading
+
+Color Strategy
+
+One primary color
+
+One accent
+
+White / light background
+
+10. Technical Requirements
+10.1 Platform
+
+WordPress / Webflow / Custom (your choice)
+
+SEO-friendly
+
+Fast (Core Web Vitals focused)
+
+10.2 Integrations
+
+CRM signup flow
+
+Booking calendar
+
+Email/SMS notifications
+
+Analytics (GA4 / Meta Pixel)
+
+10.3 Forms
+
+Lead capture
+
+Demo booking
+
+Contact form
+
+11. SEO Requirements
+Pages must include:
+
+Meta title & description
+
+Clear H1/H2 structure
+
+Keyword focus:
+
+“all-in-one CRM”
+
+“small business CRM”
+
+“marketing automation for small business”
+
+“done for you website”
+
+12. Compliance & Legal
+
+Privacy Policy
+
+Terms of Service
+
+Cookie consent (if required)
+
+Data protection language
+
+13. Risks & Mitigations
+Risk	Mitigation
+Low price → trust issues	Over-explain value & features
+Confusion vs competitors	Clear positioning & comparisons
+Feature overload	Group features clearly
+SaaS skepticism	Emphasize setup & support

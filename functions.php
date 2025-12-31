@@ -5,8 +5,8 @@
  * LVM CRM - All-In-One Business Platform
  */
 define('SITE_NAME', 'LVM CRM');
-define('SITE_EMAIL', 'info@lvmcrm.com');
-define('SITE_URL', 'https://lvmcrm.com');
+define('SITE_EMAIL', 'info@localvocalmarketing.com');
+define('SITE_URL', 'https://crm.localvocalmarketing.com/');
 define('SITE_PRICE', '$97/month');
 
 function boilerplate_load_assets() {

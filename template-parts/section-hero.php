@@ -21,8 +21,8 @@ $hero_niches = [
   <div class="relative max-w-7xl mx-auto px-6">
     <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[calc(100vh-7rem)]">
       
-      <!-- Left: Content -->
-      <div class="text-center lg:text-left order-2 lg:order-1">
+      <!-- Left: Content (appears first on mobile, first on desktop) -->
+      <div class="text-center lg:text-left">
         <!-- Headline with micro-interactions -->
         <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.1] tracking-tight mb-6">
           <span class="inline-block hero-text-line"><?php esc_html_e('Built for', 'crm-lvm'); ?> <span class="text-primary relative">Maryland<span class="absolute -bottom-1 left-0 w-full h-1 bg-primary/30 rounded-full hero-underline"></span></span></span>
@@ -33,12 +33,15 @@ $hero_niches = [
         <p class="text-xl sm:text-2xl text-muted-foreground max-w-lg mx-auto lg:mx-0 mb-10 leading-relaxed">
           <?php esc_html_e('One AI-powered platform. Setup and Ongoing Support Included.', 'crm-lvm'); ?>
           <span class="text-foreground font-semibold"><?php esc_html_e('$97/month', 'crm-lvm'); ?></span>
-          <span class="text-accent font-semibold hero-upsell"><?php esc_html_e('+ free website', 'crm-lvm'); ?> <span class="hero-upsell-sparkle">✨</span></span>
+          <span class="inline-flex items-center gap-1.5 ml-1 px-3 py-1 rounded-full bg-gradient-to-r from-accent/20 to-accent/10 border border-accent/30 text-accent font-semibold hero-upsell">
+            <svg class="w-4 h-4 hero-upsell-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM14 11a1 1 0 011 1v1h1a1 1 0 110 2h-1v1a1 1 0 11-2 0v-1h-1a1 1 0 110-2h1v-1a1 1 0 011-1z"/></svg>
+            <?php esc_html_e('+ FREE Website', 'crm-lvm'); ?>
+          </span>
         </p>
 
         <!-- CTAs -->
         <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
-          <a href="#pricing" class="group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-lg shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/25 hover:-translate-y-0.5 transition-all duration-300">
+          <a href="https://link.fastpaydirect.com/payment-link/6953e2cd7c45194addd4f86d" target="_blank" rel="noopener" class="group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-lg shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/25 hover:-translate-y-0.5 transition-all duration-300">
             <?php esc_html_e('Start Free Trial', 'crm-lvm'); ?>
             <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
@@ -78,17 +81,17 @@ $hero_niches = [
         </div>
       </div>
 
-      <!-- Right: 3D Carousel -->
-      <div class="order-1 lg:order-2 flex justify-center items-center">
-        <div id="hero-carousel" class="hero-carousel relative w-full" style="perspective: 1200px; height: 780px;">
+      <!-- Right: 3D Carousel (appears second on mobile, second on desktop) -->
+      <div class="flex justify-center items-center">
+        <div id="hero-carousel" class="hero-carousel relative w-full h-[350px] lg:h-[780px]" style="perspective: 1200px;">
           <!-- 3D Carousel Container -->
           <div class="hero-carousel-stage absolute inset-0 flex items-center justify-center" style="transform-style: preserve-3d;">
             <?php foreach ($hero_niches as $index => $niche) : ?>
-              <div class="hero-carousel-card absolute w-[520px] rounded-3xl overflow-hidden shadow-2xl transform-gpu transition-all duration-700 ease-out"
+              <div class="hero-carousel-card absolute w-[260px] lg:w-[520px] rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl transform-gpu transition-all duration-700 ease-out"
                    data-index="<?php echo $index; ?>"
                    style="transform-style: preserve-3d;">
                 <!-- Card with image -->
-                <div class="relative h-[400px] <?php echo esc_attr($niche['color']); ?>">
+                <div class="relative h-[220px] lg:h-[400px] <?php echo esc_attr($niche['color']); ?>">
                   <img src="<?php echo esc_url($niche['image']); ?>" 
                        alt="<?php echo esc_attr($niche['title']); ?>" 
                        class="w-full h-full object-cover mix-blend-overlay opacity-80"
@@ -126,6 +129,7 @@ $hero_niches = [
           let interval;
           
           function updateCarousel() {
+            const isMobile = window.innerWidth < 1024;
             cards.forEach((card, i) => {
               const offset = i - current;
               
@@ -137,28 +141,28 @@ $hero_niches = [
               let zIndex = total - Math.abs(offset);
               
               if (offset === 0) {
-                translateZ = 200;
+                translateZ = isMobile ? 60 : 200;
                 scale = 1;
                 opacity = 1;
                 zIndex = 100;
               } else if (offset === 1 || offset === -(total - 1)) {
-                translateZ = -50;
-                translateY = 200;
-                rotateX = -45;
-                scale = 0.8;
+                translateZ = isMobile ? -15 : -50;
+                translateY = isMobile ? 90 : 200;
+                rotateX = isMobile ? -35 : -45;
+                scale = isMobile ? 0.7 : 0.8;
                 opacity = 0.5;
                 zIndex = 10;
               } else if (offset === -1 || offset === (total - 1)) {
-                translateZ = -50;
-                translateY = -200;
-                rotateX = 45;
-                scale = 0.8;
+                translateZ = isMobile ? -15 : -50;
+                translateY = isMobile ? -90 : -200;
+                rotateX = isMobile ? 35 : 45;
+                scale = isMobile ? 0.7 : 0.8;
                 opacity = 0.5;
                 zIndex = 10;
               } else {
-                translateZ = -150;
-                translateY = offset > 0 ? 350 : -350;
-                rotateX = offset > 0 ? -60 : 60;
+                translateZ = isMobile ? -40 : -150;
+                translateY = offset > 0 ? (isMobile ? 150 : 350) : (isMobile ? -150 : -350);
+                rotateX = offset > 0 ? (isMobile ? -45 : -60) : (isMobile ? 45 : 60);
                 scale = 0.6;
                 opacity = 0;
                 zIndex = 1;
@@ -177,6 +181,7 @@ $hero_niches = [
           
           updateCarousel();
           interval = setInterval(next, 3000);
+          window.addEventListener('resize', updateCarousel);
         })();
       </script>
     </div>

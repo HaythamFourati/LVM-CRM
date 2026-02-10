@@ -25,6 +25,10 @@
         <a href="#testimonials" class="relative px-4 py-2 text-[13px] text-foreground/70 hover:text-primary font-medium transition-colors duration-200 rounded-lg hover:bg-primary/5"><?php esc_html_e('Testimonials', 'crm-lvm'); ?></a>
         <a href="#faq" class="relative px-4 py-2 text-[13px] text-foreground/70 hover:text-primary font-medium transition-colors duration-200 rounded-lg hover:bg-primary/5"><?php esc_html_e('FAQ', 'crm-lvm'); ?></a>
         <a href="<?php echo home_url('/blog'); ?>" class="relative px-4 py-2 text-[13px] text-foreground/70 hover:text-primary font-medium transition-colors duration-200 rounded-lg hover:bg-primary/5"><?php esc_html_e('Blog', 'crm-lvm'); ?></a>
+        <a href="<?php echo home_url('/ai-agent'); ?>" class="relative px-4 py-2 text-[13px] text-primary font-semibold transition-colors duration-200 rounded-lg hover:bg-primary/5 flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          <?php esc_html_e('AI Agent', 'crm-lvm'); ?>
+        </a>
       </div>
 
       <!-- Actions -->
@@ -65,6 +69,10 @@
           <a href="#testimonials" class="px-3 py-2.5 text-[14px] text-foreground font-medium rounded-lg hover:bg-primary/5 transition-colors"><?php esc_html_e('Testimonials', 'crm-lvm'); ?></a>
           <a href="#faq" class="px-3 py-2.5 text-[14px] text-foreground font-medium rounded-lg hover:bg-primary/5 transition-colors"><?php esc_html_e('FAQ', 'crm-lvm'); ?></a>
           <a href="<?php echo home_url('/blog'); ?>" class="px-3 py-2.5 text-[14px] text-foreground font-medium rounded-lg hover:bg-primary/5 transition-colors"><?php esc_html_e('Blog', 'crm-lvm'); ?></a>
+          <a href="<?php echo home_url('/ai-agent'); ?>" class="px-3 py-2.5 text-[14px] text-primary font-semibold rounded-lg hover:bg-primary/5 transition-colors flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            <?php esc_html_e('AI Agent', 'crm-lvm'); ?>
+          </a>
         </div>
         
         <!-- Mobile CTA -->

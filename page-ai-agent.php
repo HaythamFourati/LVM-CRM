@@ -325,24 +325,29 @@ get_header(); ?>
         <?php esc_html_e('Curious how it sounds? Start a live demo call and experience it as if you were a real customer calling your business.', 'crm-lvm'); ?>
       </p>
 
-      <!-- AI Call Demo Widget -->
-      <div class="relative bg-white rounded-3xl border border-primary/20 p-8 lg:p-12 shadow-lg shadow-primary/5 max-w-xl mx-auto">
-        <div class="flex flex-col items-center gap-4 mb-6">
-          <div class="w-24 h-24 rounded-full bg-primary text-white flex items-center justify-center shadow-xl shadow-primary/30 animate-pulse">
-            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-            </svg>
-          </div>
-          <h3 class="text-2xl font-bold text-foreground"><?php esc_html_e('Talk to the AI Agent Now', 'crm-lvm'); ?></h3>
-          <p class="text-muted-foreground"><?php esc_html_e('Tap the button below to start a live demo call.', 'crm-lvm'); ?></p>
+      <!-- AI Call Demo Widget (scaled up for accessibility) -->
+      <div class="relative max-w-md mx-auto">
+        <style>
+          .ai-demo-widget-wrapper {
+            transform: scale(1.4);
+            transform-origin: center center;
+            margin: 3rem 0;
+          }
+          @media (max-width: 640px) {
+            .ai-demo-widget-wrapper {
+              transform: scale(1.2);
+              margin: 2rem 0;
+            }
+          }
+        </style>
+        <div class="ai-demo-widget-wrapper">
+          <!-- GHL AI Call Widget -->
+          <script 
+            src="https://widgets.leadconnectorhq.com/loader.js"  
+            data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" 
+            data-widget-id="698ae681577219e828bc6526">
+          </script>
         </div>
-
-        <!-- GHL AI Call Widget -->
-        <script 
-          src="https://widgets.leadconnectorhq.com/loader.js"  
-          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" 
-          data-widget-id="698ae681577219e828bc6526">
-        </script>
       </div>
     </div>
   </section>

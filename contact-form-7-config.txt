@@ -1,0 +1,150 @@
+═══════════════════════════════════════════════════════════════════════════════
+CONTACT FORM 7 CONFIGURATION - LVM CRM
+═══════════════════════════════════════════════════════════════════════════════
+
+This file contains the Contact Form 7 configuration for the contact page.
+Use this code when creating the form in WordPress Admin → Contact → Add New.
+
+═══════════════════════════════════════════════════════════════════════════════
+FORM FIELDS CODE (paste in the "Form" tab)
+═══════════════════════════════════════════════════════════════════════════════
+
+IMPORTANT: CF7 auto-wraps lines in <p> tags and adds <br> tags.
+Our CSS in index.css handles this by resetting <p> margins and hiding <br>.
+All styling (inputs, textarea, checkboxes, submit) is handled via CSS.
+Keep the form code simple — do NOT add Tailwind classes to CF7 shortcodes.
+
+--- PASTE THIS INTO THE CF7 FORM TAB ---
+
+<div class="cf7-fields">
+
+<label>Your Name (required)</label>
+[text* contact-name id:contact-name placeholder "John Doe"]
+
+<label>Your Email (required)</label>
+[email* contact-email id:contact-email placeholder "john@example.com"]
+
+<label>Your Phone Number</label>
+[tel contact-phone id:contact-phone placeholder "(555) 123-4567"]
+
+<label>Your Message (required)</label>
+[textarea* contact-message id:contact-message placeholder "Tell us how we can help..."]
+
+<div class="cf7-consent">
+<div class="cf7-consent-item">[acceptance consent-transactional optional] By checking this box, I consent to receive transactional messages related to my account, orders, or services I have requested from Local Vocal Marketing. These messages may include appointment reminders, order confirmations, and account notifications among others. Message frequency may vary. Message & Data rates may apply. Reply HELP for help or STOP to opt-out. [/acceptance]</div>
+
+<div class="cf7-consent-item">[acceptance consent-marketing optional] By checking this box, I consent to receive marketing and promotional messages, including special offers, discounts, new product updates among others from Local Vocal Marketing. Message frequency may vary. Message & Data rates may apply. Reply HELP for help or STOP to opt-out. [/acceptance]</div>
+</div>
+
+[submit class:cf7-submit "Send Message"]
+
+<div class="legal-links"><a href="/privacy-policy">Privacy Policy</a> <span class="separator">|</span> <a href="/terms-of-service">Terms of Service</a></div>
+
+</div>
+
+--- END ---
+
+═══════════════════════════════════════════════════════════════════════════════
+MAIL SETTINGS (configure in the "Mail" tab)
+═══════════════════════════════════════════════════════════════════════════════
+
+To:
+[your-email]@yourdomain.com
+
+From:
+[contact-name] <[contact-email]>
+
+Subject:
+New Contact Form Submission from [contact-name]
+
+Additional Headers:
+Reply-To: [contact-email]
+
+Message Body:
+Name: [contact-name]
+Email: [contact-email]
+Phone: [contact-phone]
+
+Message:
+[contact-message]
+
+---
+Consent - Transactional Messages: [consent-transactional]
+Consent - Marketing Messages: [consent-marketing]
+
+---
+This message was sent from the contact form on LVM CRM
+
+═══════════════════════════════════════════════════════════════════════════════
+MESSAGES SETTINGS (configure in the "Messages" tab)
+═══════════════════════════════════════════════════════════════════════════════
+
+Successfully sent:
+Thank you for your message! We'll get back to you soon.
+
+Validation errors:
+Please fill in the required fields correctly.
+
+Acceptance must be checked:
+Please accept the terms to proceed.
+
+═══════════════════════════════════════════════════════════════════════════════
+ADDITIONAL CSS (add to your theme's CSS if needed)
+═══════════════════════════════════════════════════════════════════════════════
+
+/* Contact Form 7 Response Messages */
+.wpcf7-response-output {
+  margin: 1.5rem 0 0;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.wpcf7-mail-sent-ok {
+  background-color: rgb(220 252 231);
+  border: 1px solid rgb(134 239 172);
+  color: rgb(22 101 52);
+}
+
+.wpcf7-validation-errors,
+.wpcf7-acceptance-missing {
+  background-color: rgb(254 242 242);
+  border: 1px solid rgb(252 165 165);
+  color: rgb(153 27 27);
+}
+
+.wpcf7-not-valid-tip {
+  color: rgb(220 38 38);
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+/* Hide spinner */
+.wpcf7 form.submitting .wpcf7-spinner {
+  display: none;
+}
+
+/* Submit button loading state */
+.wpcf7 form.submitting .wpcf7-submit {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+═══════════════════════════════════════════════════════════════════════════════
+INSTRUCTIONS
+═══════════════════════════════════════════════════════════════════════════════
+
+1. Install Contact Form 7 plugin if not already installed
+2. Go to WordPress Admin → Contact → Add New
+3. Give the form a name (e.g., "Contact Page Form")
+4. Paste the FORM FIELDS CODE above into the Form tab
+5. Configure the Mail tab with your email settings
+6. Customize Messages tab if desired
+7. Save the form and copy the shortcode (e.g., [contact-form-7 id="123"])
+8. Use that shortcode in the contact page template
+
+The shortcode will be: [contact-form-7 id="YOUR_FORM_ID" title="Contact Page Form"]
+
+═══════════════════════════════════════════════════════════════════════════════

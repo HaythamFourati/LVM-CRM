@@ -51,10 +51,10 @@
       <nav aria-label="Resources" class="lg:col-span-2">
         <h4 class="font-semibold text-[14px] text-white mb-5"><?php esc_html_e('Resources', 'crm-lvm'); ?></h4>
         <ul class="space-y-3">
-          <li><a href="<?php echo home_url('/blog'); ?>" class="text-[13px] text-white/60 hover:text-white transition-colors"><?php esc_html_e('Blog', 'crm-lvm'); ?></a></li>
-          <li><a href="#" class="text-[13px] text-white/60 hover:text-white transition-colors"><?php esc_html_e('Help Center', 'crm-lvm'); ?></a></li>
-          <li><a href="#" class="text-[13px] text-white/60 hover:text-white transition-colors"><?php esc_html_e('Privacy Policy', 'crm-lvm'); ?></a></li>
-          <li><a href="#" class="text-[13px] text-white/60 hover:text-white transition-colors"><?php esc_html_e('Terms of Service', 'crm-lvm'); ?></a></li>
+          <li><a href="<?php echo home_url('/about'); ?>" class="text-[13px] text-white/60 hover:text-white transition-colors"><?php esc_html_e('About', 'crm-lvm'); ?></a></li>
+          <li><a href="<?php echo home_url('/contact'); ?>" class="text-[13px] text-white/60 hover:text-white transition-colors"><?php esc_html_e('Contact', 'crm-lvm'); ?></a></li>
+          <li><a href="<?php echo home_url('/privacy-policy'); ?>" class="text-[13px] text-white/60 hover:text-white transition-colors"><?php esc_html_e('Privacy Policy', 'crm-lvm'); ?></a></li>
+          <li><a href="<?php echo home_url('/terms-of-service'); ?>" class="text-[13px] text-white/60 hover:text-white transition-colors"><?php esc_html_e('Terms of Service', 'crm-lvm'); ?></a></li>
         </ul>
       </nav>
 

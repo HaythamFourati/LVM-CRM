@@ -56,7 +56,7 @@ get_header(); ?>
             <div class="relative bg-card rounded-3xl border border-border p-8 shadow-2xl shadow-primary/5">
               <!-- Animated pulse ring -->
               <div class="absolute -top-4 -right-4 w-20 h-20">
-                <div class="absolute inset-0 rounded-full bg-primary/20 animate-ping"></div>
+                <div class="absolute inset-0 rounded-full bg-primary/20"></div>
                 <div class="relative w-full h-full rounded-full bg-primary/10 flex items-center justify-center">
                   <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
@@ -308,7 +308,7 @@ get_header(); ?>
   <!-- ═══════════════════════════════════════════════════════════════
        4. LIVE DEMO SECTION (Widget Placeholder)
   ════════════════════════════════════════════════════════════════ -->
-  <section id="demo" class="py-20 lg:py-28 bg-gradient-to-b from-primary/[0.03] to-transparent">
+  <section id="demo" class="py-14 lg:py-20 bg-gradient-to-b from-primary/[0.03] to-transparent">
     <div class="max-w-4xl mx-auto px-6 text-center">
       <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -321,7 +321,7 @@ get_header(); ?>
         <?php esc_html_e('Try the AI Agent Yourself', 'crm-lvm'); ?>
       </h2>
 
-      <p class="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
+      <p class="text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
         <?php esc_html_e('Curious how it sounds? Start a live demo call and experience it as if you were a real customer calling your business.', 'crm-lvm'); ?>
       </p>
 
@@ -329,14 +329,18 @@ get_header(); ?>
       <div class="relative max-w-md mx-auto">
         <style>
           .ai-demo-widget-wrapper {
-            transform: scale(1.4);
-            transform-origin: center center;
-            margin: 3rem 0;
+            display: inline-block;
+            transform: scale(1.35);
+            transform-origin: top center;
+            margin: 0;
+            padding: 0;
+            line-height: 0;
+            margin-bottom: -2.25rem;
           }
           @media (max-width: 640px) {
             .ai-demo-widget-wrapper {
-              transform: scale(1.2);
-              margin: 2rem 0;
+              transform: scale(1.18);
+              margin-bottom: -1.25rem;
             }
           }
         </style>

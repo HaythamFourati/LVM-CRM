@@ -12,7 +12,7 @@ get_header(); ?>
   <!-- ═══════════════════════════════════════════════════════════════
        1. HERO SECTION
   ════════════════════════════════════════════════════════════════ -->
-  <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+  <section id="hero" class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
     <!-- Background -->
     <div class="absolute inset-0 bg-gradient-to-br from-primary/[0.04] via-transparent to-accent/[0.03]"></div>
     <div class="absolute top-20 right-0 w-[500px] h-[500px] rounded-full bg-primary/[0.04] blur-3xl"></div>
@@ -39,13 +39,31 @@ get_header(); ?>
             <?php esc_html_e('Never miss another opportunity. Let AI handle your calls while you focus on running your business.', 'crm-lvm'); ?>
           </p>
 
-          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <a href="#demo" class="group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-lg shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/25 hover:-translate-y-0.5 transition-all duration-300">
-              <?php esc_html_e('Try the Demo Call', 'crm-lvm'); ?>
-              <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-              </svg>
-            </a>
+          <!-- GHL AI Call Widget -->
+          <div class="flex justify-center lg:justify-start">
+            <style>
+              .hero-ai-widget-wrapper {
+                display: inline-block;
+                transform: scale(1.25);
+                transform-origin: center left;
+                margin: 0;
+                padding: 0;
+                line-height: 0;
+              }
+              @media (max-width: 1024px) {
+                .hero-ai-widget-wrapper {
+                  transform: scale(1.15);
+                  transform-origin: center center;
+                }
+              }
+            </style>
+            <div class="hero-ai-widget-wrapper">
+              <script 
+                src="https://widgets.leadconnectorhq.com/loader.js"  
+                data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" 
+                data-widget-id="698ae681577219e828bc6526">
+              </script>
+            </div>
           </div>
         </div>
 
@@ -54,15 +72,7 @@ get_header(); ?>
           <div class="relative w-full max-w-md">
             <!-- Main card -->
             <div class="relative bg-card rounded-3xl border border-border p-8 shadow-2xl shadow-primary/5">
-              <!-- Animated pulse ring -->
-              <div class="absolute -top-4 -right-4 w-20 h-20">
-                <div class="absolute inset-0 rounded-full bg-primary/20"></div>
-                <div class="relative w-full h-full rounded-full bg-primary/10 flex items-center justify-center">
-                  <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                  </svg>
-                </div>
-              </div>
+              
 
               <!-- AI avatar -->
               <div class="flex items-center gap-4 mb-6">
@@ -306,58 +316,7 @@ get_header(); ?>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════
-       4. LIVE DEMO SECTION (Widget Placeholder)
-  ════════════════════════════════════════════════════════════════ -->
-  <section id="demo" class="py-14 lg:py-20 bg-gradient-to-b from-primary/[0.03] to-transparent">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
-        </svg>
-        <?php esc_html_e('Live Demo', 'crm-lvm'); ?>
-      </div>
-
-      <h2 class="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-        <?php esc_html_e('Try the AI Agent Yourself', 'crm-lvm'); ?>
-      </h2>
-
-      <p class="text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
-        <?php esc_html_e('Curious how it sounds? Start a live demo call and experience it as if you were a real customer calling your business.', 'crm-lvm'); ?>
-      </p>
-
-      <!-- AI Call Demo Widget (scaled up for accessibility) -->
-      <div class="relative max-w-md mx-auto">
-        <style>
-          .ai-demo-widget-wrapper {
-            display: inline-block;
-            transform: scale(1.35);
-            transform-origin: top center;
-            margin: 0;
-            padding: 0;
-            line-height: 0;
-            margin-bottom: -2.25rem;
-          }
-          @media (max-width: 640px) {
-            .ai-demo-widget-wrapper {
-              transform: scale(1.18);
-              margin-bottom: -1.25rem;
-            }
-          }
-        </style>
-        <div class="ai-demo-widget-wrapper">
-          <!-- GHL AI Call Widget -->
-          <script 
-            src="https://widgets.leadconnectorhq.com/loader.js"  
-            data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" 
-            data-widget-id="698ae681577219e828bc6526">
-          </script>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════════════
-       5. BENEFITS SECTION
+       4. BENEFITS SECTION
   ════════════════════════════════════════════════════════════════ -->
   <section class="py-20 lg:py-28 bg-background">
     <div class="max-w-6xl mx-auto px-6">
@@ -566,7 +525,7 @@ get_header(); ?>
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
           </svg>
         </a>
-        <a href="#demo" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold text-lg hover:bg-white/20 transition-all duration-200">
+        <a href="#hero" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold text-lg hover:bg-white/20 transition-all duration-200">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
           </svg>

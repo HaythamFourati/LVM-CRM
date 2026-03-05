@@ -56,13 +56,52 @@ get_header(); ?>
                   transform-origin: center center;
                 }
               }
+              .hero-widget-arrow {
+                position: absolute;
+                right: -220px;
+                top: -34px;
+                width: 160px;
+                height: 110px;
+                z-index: 10;
+                pointer-events: none;
+                opacity: 0;
+                animation: hero-arrow-intro 0.9s ease-out forwards;
+                animation-delay: 1s;
+              }
+              @keyframes hero-arrow-intro {
+                0% {
+                  opacity: 0;
+                  transform: translateX(0) translateY(0) scale(0.98);
+                }
+                100% {
+                  opacity: 1;
+                  transform: translateX(-8px) translateY(6px) scale(1);
+                }
+              }
+              @media (prefers-reduced-motion: reduce) {
+                .hero-widget-arrow {
+                  animation: none;
+                  opacity: 1;
+                }
+              }
+              @media (max-width: 1023px) {
+                .hero-widget-arrow {
+                  display: none;
+                }
+              }
             </style>
-            <div class="hero-ai-widget-wrapper">
-              <script 
-                src="https://widgets.leadconnectorhq.com/loader.js"  
-                data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" 
-                data-widget-id="698ae681577219e828bc6526">
-              </script>
+            <div class="relative inline-block">
+              <svg class="hero-widget-arrow" viewBox="0 0 160 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M150 20 C 120 18, 98 30, 74 46 C 55 58, 34 62, 18 66" stroke="hsl(0 72% 51%)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+                <path d="M26 58 L16 66 L28 74" stroke="hsl(0 72% 51%)" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <div class="hero-ai-widget-wrapper">
+                <script 
+                  src="https://widgets.leadconnectorhq.com/loader.js"  
+                  data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" 
+                  data-widget-id="698ae681577219e828bc6526">
+                </script>
+              </div>
             </div>
           </div>
         </div>
